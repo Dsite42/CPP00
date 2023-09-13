@@ -1,28 +1,6 @@
 
 #include "phonebook.hpp"
 
-class Contact
-{
-	private:
-
-	public:
-		std::string Last_name;
-		std::string First_name;
-		time_t Created;
-		Contact()
-		{
-			First_name = "";
-			Last_name = "";
-			Created = time(&Created);
-		}
-		Contact(std::string first_name, std::string last_name)
-		{
-			First_name = first_name;
-			Last_name = last_name;
-			time(&Created);
-		}
-};
-
 int search_oldest_entrie(Contact contacts[MAX_CONTACTS])
 {
 	int oldest;
@@ -56,12 +34,6 @@ class PhoneBook
 				contacts[search_oldest_entrie(contacts)] = (Contact(firstname, lastname));
 		}
 };
-
-void print_contact(Contact contact)
-{
-	std::cout << "First name: " << contact.First_name << std::endl;
-	std::cout << "Last name: " << contact.Last_name << std::endl;
-}
 
 int main(void)
 {

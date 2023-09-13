@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   search_oldest_entry.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cgodecke <cgodecke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 13:46:16 by cgodecke          #+#    #+#             */
-/*   Updated: 2023/09/13 18:32:17 by cgodecke         ###   ########.fr       */
+/*   Created: 2023/09/13 18:27:38 by cgodecke          #+#    #+#             */
+/*   Updated: 2023/09/13 18:29:27 by cgodecke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-# include <iostream>
-# include <string>
-# include <iomanip>
-# include <ctime>
-# include "Contact.hpp"
+#include "phonebook.hpp"
 
-
-# define MAX_CONTACTS 1
-
-void	print_text(std::string text, bool newline);
-int		search_oldest_entrie(Contact contacts[MAX_CONTACTS]);
-void	print_contact(Contact contact);
-#endif
+int search_oldest_entry(Contact contacts[MAX_CONTACTS])
+{
+	int oldest;
+	oldest = 0;
+	for(int i = 0; i < MAX_CONTACTS; i++)
+	{
+		if(contacts[i].Created < contacts[oldest].Created)
+			oldest = i;
+	}
+	return (oldest);
+}
