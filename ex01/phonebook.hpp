@@ -6,7 +6,7 @@
 /*   By: cgodecke <cgodecke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:46:16 by cgodecke          #+#    #+#             */
-/*   Updated: 2023/09/13 18:32:17 by cgodecke         ###   ########.fr       */
+/*   Updated: 2023/09/14 10:56:53 by cgodecke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <string>
 # include <iomanip>
 # include <ctime>
-# include "Contact.hpp"
+# include "Contact.class.hpp"
 
 
 # define MAX_CONTACTS 1
