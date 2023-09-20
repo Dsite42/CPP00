@@ -6,12 +6,13 @@
 /*   By: cgodecke <cgodecke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 11:45:49 by cgodecke          #+#    #+#             */
-/*   Updated: 2023/09/20 14:07:47 by cgodecke         ###   ########.fr       */
+/*   Updated: 2023/09/20 15:09:19 by cgodecke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
+#include "main.hpp"
 
 void print_contact(Contact contact)
 {
@@ -22,19 +23,6 @@ void print_contact(Contact contact)
 	std::cout << "darkest secret: " << contact.Darkest_secret << std::endl;
 }
 
-void print_text(std::string text, bool newline)
-{
-	if(text.length() > 10)
-	{
-		text.resize(9);
-		text.append(".");
-	}
-	if(newline)
-		std::cout << std::setfill(' ') << std::setw(10) << text << std::endl;
-	else
-		std::cout << std::setfill(' ') << std::setw(10) << text << "|";
-}
-
 void add_contact(PhoneBook *phoneBook)
 {
 	std::string first_name;
@@ -43,11 +31,8 @@ void add_contact(PhoneBook *phoneBook)
 	std::string phone_number;
 	std::string darkest_secret;
 
-	while (first_name.empty())
-	{
-		std::cout << "Enter first name: ";
-		std::cin >> first_name;
-	}
+	std::cout << "Enter first name: ";
+	std::cin >> first_name;
 	std::cout << "Enter last name: ";
 	std::cin >> last_name;
 	std::cout << "Enter nick name: ";
@@ -57,30 +42,6 @@ void add_contact(PhoneBook *phoneBook)
 	std::cout << "Enter darkest secret: ";
 	std::cin >> darkest_secret;
 	phoneBook->addContact(first_name , last_name, nick_name, phone_number, darkest_secret);
-}
-
-void search_contact(PhoneBook *phoneBook)
-{
-	int index;
-	int i;
-
-	print_text("index", false);
-	print_text("first name", false);
-	print_text("last name", false);
-	print_text("nick name", true);
-	for(i = 0; i < phoneBook->num_entries; i++)
-	{
-		std::cout << std::setfill(' ') << std::setw(10) << i + 1 << "|";
-		print_text(phoneBook->contacts[i].First_name, false);
-		print_text(phoneBook->contacts[i].Last_name, false);
-		print_text(phoneBook->contacts[i].Nick_name, true);
-	}
-	std::cout << "Enter index: ";
-	std::cin >> index;
-	if (index > 0 && index <= phoneBook->num_entries)
-		print_contact(phoneBook->contacts[index - 1]);
-	else
-		std::cout << "Invalid index" << std::endl;
 }
 
 int main(void)

@@ -6,7 +6,7 @@
 /*   By: cgodecke <cgodecke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:46:16 by cgodecke          #+#    #+#             */
-/*   Updated: 2023/09/20 13:22:39 by cgodecke         ###   ########.fr       */
+/*   Updated: 2023/09/20 15:05:09 by cgodecke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,5 @@ class PhoneBook
 			std::string phone_number, std::string darkest_secret);
 };
 
-void	print_text(std::string text, bool newline);
 int		search_oldest_entrie(Contact contacts[MAX_CONTACTS]);
-void	print_contact(Contact contact);
 #endif

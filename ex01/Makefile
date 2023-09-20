@@ -6,7 +6,7 @@
 #    By: cgodecke <cgodecke@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/18 15:39:27 by cgodecke          #+#    #+#              #
-#    Updated: 2023/09/20 12:59:17 by cgodecke         ###   ########.fr        #
+#    Updated: 2023/09/20 15:07:41 by cgodecke         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ C++_FLAGS = -g -Wall -Wextra -Werror -std=c++98
 INFILES = 	main.cpp\
 			Contact.cpp\
 			PhoneBook.cpp\
+			search_contact.cpp\
 
 OBJFILES = $(INFILES:.cpp=.o)
 
