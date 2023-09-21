@@ -6,7 +6,7 @@
 /*   By: cgodecke <cgodecke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 15:06:01 by cgodecke          #+#    #+#             */
-/*   Updated: 2023/09/20 15:14:48 by cgodecke         ###   ########.fr       */
+/*   Updated: 2023/09/21 09:27:58 by cgodecke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,5 @@ void search_contact(PhoneBook *phoneBook)
 	else if (index > 0 && index <= phoneBook->num_entries)
 		print_contact(phoneBook->contacts[index - 1]);
 	else
-		std::cout << "Invalid index" << std::endl;
-	
+		std::cout << "Invalid index" << std::endl;	
 }

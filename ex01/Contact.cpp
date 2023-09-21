@@ -6,7 +6,7 @@
 /*   By: cgodecke <cgodecke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 11:34:27 by cgodecke          #+#    #+#             */
-/*   Updated: 2023/09/20 13:20:33 by cgodecke         ###   ########.fr       */
+/*   Updated: 2023/09/21 09:27:01 by cgodecke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ Contact::Contact()
 	Last_name = "";
 	Created = time(&Created);
 }
-	Contact::Contact(std::string first_name, std::string last_name, std::string nick_name,
+
+Contact::Contact(std::string first_name, std::string last_name, std::string nick_name,
 		std::string phone_number, std::string darkest_secret)
 {
 	First_name = first_name;
