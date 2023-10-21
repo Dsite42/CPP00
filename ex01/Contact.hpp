@@ -6,7 +6,7 @@
 /*   By: cgodecke <cgodecke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 09:26:36 by cgodecke          #+#    #+#             */
-/*   Updated: 2023/09/21 09:27:18 by cgodecke         ###   ########.fr       */
+/*   Updated: 2023/10/21 14:04:52 by cgodecke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Contact
 		std::string Nick_name;
 		std::string Phone_number;
 		std::string Darkest_secret;
-		time_t Created;
+		time_t 		Created;
 		
 		Contact();
 		Contact(std::string first_name, std::string last_name, std::string nick_name,
