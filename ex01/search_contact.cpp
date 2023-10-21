@@ -6,7 +6,7 @@
 /*   By: cgodecke <cgodecke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 15:06:01 by cgodecke          #+#    #+#             */
-/*   Updated: 2023/09/21 09:27:58 by cgodecke         ###   ########.fr       */
+/*   Updated: 2023/10/21 17:37:25 by cgodecke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,19 @@ static void print_phonebook_entries(PhoneBook *phoneBook)
 	for(i = 0; i < phoneBook->num_entries; i++)
 	{
 		std::cout << std::setfill(' ') << std::setw(10) << i + 1 << "|";
-		print_text(phoneBook->contacts[i].First_name, false);
-		print_text(phoneBook->contacts[i].Last_name, false);
-		print_text(phoneBook->contacts[i].Nick_name, true);
+		print_text(phoneBook->contacts[i].getFirst_name(), false);
+		print_text(phoneBook->contacts[i].getLastName(), false);
+		print_text(phoneBook->contacts[i].getNick_name(), true);
 	}
 }
 
 static void print_contact(Contact contact)
 {
-	std::cout << std::endl << "first name: " << contact.First_name << std::endl;
-	std::cout << "last name: " << contact.Last_name << std::endl;
-	std::cout << "nick name: " << contact.Nick_name << std::endl;
-	std::cout << "phone number: " << contact.Phone_number << std::endl;
-	std::cout << "darkest secret: " << contact.Darkest_secret << std::endl;
+	std::cout << std::endl << "first name: " << contact.getFirst_name() << std::endl;
+	std::cout << "last name: " << contact.getLastName() << std::endl;
+	std::cout << "nick name: " << contact.getNick_name() << std::endl;
+	std::cout << "phone number: " << contact.getPhone_number() << std::endl;
+	std::cout << "darkest secret: " << contact.getDarkest_secret() << std::endl;
 }
 
 void search_contact(PhoneBook *phoneBook)
