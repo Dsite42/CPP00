@@ -6,7 +6,7 @@
 /*   By: cgodecke <cgodecke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 12:47:42 by cgodecke          #+#    #+#             */
-/*   Updated: 2023/10/21 17:34:49 by cgodecke         ###   ########.fr       */
+/*   Updated: 2023/10/21 19:09:28 by cgodecke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int search_oldest_entry(Contact contacts[MAX_CONTACTS])
 // Constructors
 PhoneBook::PhoneBook()
 {
-	num_entries = 0;
+	_num_entries = 0;
 }
 
 PhoneBook::~PhoneBook()
@@ -40,11 +40,16 @@ PhoneBook::~PhoneBook()
  void PhoneBook::addContact(std::string first_name, std::string last_name, std::string nick_name,
 			std::string phone_number, std::string darkest_secret)
 {
-	if(num_entries < MAX_CONTACTS)
+	if(_num_entries < MAX_CONTACTS)
 	{
-		contacts[num_entries] = Contact(first_name, last_name, nick_name, phone_number, darkest_secret);
-		num_entries++;
+		contacts[_num_entries] = Contact(first_name, last_name, nick_name, phone_number, darkest_secret);
+		_num_entries++;
 	}
 	else
 		contacts[search_oldest_entry(contacts)] = Contact(first_name, last_name, nick_name, phone_number, darkest_secret);
+}
+
+int PhoneBook::getNumEntries()
+{
+	return (this->_num_entries);
 }

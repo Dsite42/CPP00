@@ -6,7 +6,7 @@
 /*   By: cgodecke <cgodecke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 15:06:01 by cgodecke          #+#    #+#             */
-/*   Updated: 2023/10/21 17:37:25 by cgodecke         ###   ########.fr       */
+/*   Updated: 2023/10/21 19:42:26 by cgodecke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ static void print_column_titles(void)
 static void print_phonebook_entries(PhoneBook *phoneBook)
 {
 	int i;
-
-	for(i = 0; i < phoneBook->num_entries; i++)
+	for(i = 0; i < phoneBook->getNumEntries(); i++)
 	{
 		std::cout << std::setfill(' ') << std::setw(10) << i + 1 << "|";
 		print_text(phoneBook->contacts[i].getFirst_name(), false);
@@ -58,7 +57,6 @@ static void print_contact(Contact contact)
 void search_contact(PhoneBook *phoneBook)
 {
 	int index = 0;
-
 	print_column_titles();
 	print_phonebook_entries(phoneBook);
 	std::cout << "Enter index: ";
@@ -68,8 +66,16 @@ void search_contact(PhoneBook *phoneBook)
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
-	else if (index > 0 && index <= phoneBook->num_entries)
+	else if (index > 0 && index <= phoneBook->getNumEntries())
+	{
 		print_contact(phoneBook->contacts[index - 1]);
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	}
 	else
+	{
 		std::cout << "Invalid index" << std::endl;	
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	}
 }
