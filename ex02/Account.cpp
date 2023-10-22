@@ -6,7 +6,7 @@
 /*   By: cgodecke <cgodecke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 09:46:34 by cgodecke          #+#    #+#             */
-/*   Updated: 2023/09/21 15:08:39 by cgodecke         ###   ########.fr       */
+/*   Updated: 2023/10/22 15:54:56 by cgodecke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void Account::_displayTimestamp(void)
     char timestamp[20];
     std::time_t now;
 	
-	now = std::time(nullptr);
+	std::time(&now);
     std::strftime(timestamp, sizeof(timestamp), "%Y%m%d_%H%M%S", std::localtime(&now));
 	std::cout << "[" << timestamp << "] ";
 }
