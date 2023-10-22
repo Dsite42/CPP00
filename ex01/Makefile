@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 C++ = c++
-C++_FLAGS = -Wall -Wextra -Werror -g -fsanitize=address -std=c++98
+C++_FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 INFILES = 	main.cpp\
 			Contact.cpp\
 			PhoneBook.cpp\
@@ -23,9 +23,11 @@ NAME = phonebook
 
 all: $(NAME)
 
-
 $(NAME):$(OBJFILES)
 	$(C++) $(C++_FLAGS) $(OBJFILES) -o $(NAME) 
+
+%.o: %.cpp
+	$(C++) $(C++_FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJFILES)

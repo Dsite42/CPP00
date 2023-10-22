@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 C++ = c++
-C++_FLAGS = -Wall -Wextra -Werror -std=c++98
+C++_FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 INFILES = 	tests.cpp\
 			Account.cpp\
 
@@ -21,9 +21,11 @@ NAME = The_Job_Of_Your_Dreams
 
 all: $(NAME)
 
-
 $(NAME):$(OBJFILES)
 	$(C++) $(C++_FLAGS) $(OBJFILES) -o $(NAME) 
+
+%.o: %.cpp
+	$(C++) $(C++_FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJFILES)
