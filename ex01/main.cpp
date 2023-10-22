@@ -6,13 +6,25 @@
 /*   By: cgodecke <cgodecke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 11:45:49 by cgodecke          #+#    #+#             */
-/*   Updated: 2023/10/22 12:44:32 by cgodecke         ###   ########.fr       */
+/*   Updated: 2023/10/22 15:46:49 by cgodecke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 #include "main.hpp"
+
+std::string getUserInput(std::string message)
+{
+	std::string user_input = "";
+
+	while (user_input.length() == 0)
+	{
+		std::cout << message;
+		std::getline(std::cin, user_input);
+	}
+	return (user_input);
+}
 
 void add_contact(PhoneBook *phoneBook)
 {
@@ -22,16 +34,11 @@ void add_contact(PhoneBook *phoneBook)
 	std::string phone_number;
 	std::string darkest_secret;
 
-	std::cout << "Enter first name: ";
-	std::getline(std::cin, first_name);
-	std::cout << "Enter last name: ";
-	std::getline(std::cin, last_name);
-	std::cout << "Enter nick name: ";
-	std::getline(std::cin, nick_name);
-	std::cout << "Enter phone number: ";
-	std::getline(std::cin, phone_number);
-	std::cout << "Enter darkest secret: ";
-	std::getline(std::cin, darkest_secret);
+	first_name = getUserInput("Enter first name: ");
+	last_name = getUserInput("Enter last name: ");
+	nick_name = getUserInput("Enter nick name: ");
+	phone_number = getUserInput("Enter phone number: ");
+	darkest_secret = getUserInput("Enter darkest secret: ");
 	phoneBook->addContact(first_name , last_name, nick_name, phone_number, darkest_secret);
 }
 
