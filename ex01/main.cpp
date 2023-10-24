@@ -6,7 +6,7 @@
 /*   By: cgodecke <cgodecke@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 11:45:49 by cgodecke          #+#    #+#             */
-/*   Updated: 2023/10/22 15:46:49 by cgodecke         ###   ########.fr       */
+/*   Updated: 2023/10/24 09:53:43 by cgodecke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int main(void)
 			search_contact(&phoneBook);
 		else if(command.compare("EXIT") == 0)
 			break;
+		else
+			std::cout << "Invalid command!" << std::endl;
 	}
 	return (0);
 }
